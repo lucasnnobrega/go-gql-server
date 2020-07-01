@@ -11,3 +11,5 @@ time go build -o $output $src
 printf "\nBuilt: $app size:"
 ls -lah $output | awk '{print $5}'
 printf "\nDone building: $app\n\n"
+
+# go build -o build/gql-server cmd/gql-server/main.go
