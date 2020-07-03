@@ -2,7 +2,8 @@ package resolvers
 
 import (
 	"context"
-
+	"fmt"
+	"github.com/99designs/gqlgen/graphql"
 	"github.com/biezhi/gorm-paginator/pagination"
 	"github.com/iancoleman/strcase"
 	"github.com/znobrega/go-gql-server/internal/gql/models"
@@ -26,6 +27,13 @@ func (r *queryResolver) Orders(ctx context.Context, limit *int, page *int, filte
 	var dbRecords []*models.Order
 
 	db := r.ORM.DB.New()
+
+	// GERALDO CODE
+	fields := graphql.CollectAllFields(ctx)
+	fmt.Println("print fields=>", fields)
+
+	fmt.Println("print list=>", fields[3])
+	// END GERALDO CODE
 
 	if filter != nil {
 		filterSnakeCase := make(map[string]interface{})
