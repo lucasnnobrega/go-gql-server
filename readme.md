@@ -14,4 +14,4 @@ link do repositório -> https://github.com/znobrega/go-gql-server.git
 1 - usar valores default no parametros
 2 - todos os parametros serão listas
 
-["./arch.png"](./arch.png)
+!["./arch.png"](./arch.png)
